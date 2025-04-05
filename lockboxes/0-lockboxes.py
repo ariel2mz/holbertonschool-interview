@@ -1,5 +1,15 @@
 #!/usr/bin/python3
+"""
+asdsadsadasdsa
+"""
+
+
 def canUnlockAll(boxes):
+    """
+    sadasdsadsa
+    dsadsadsa
+    """
+    
     llavero = [0]
     abiertas = []
     abierto = 1
