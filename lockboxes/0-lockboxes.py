@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
     sadasdsadsa
     dsadsadsa
     """
-    
+
     llavero = [0]
     abiertas = []
     abierto = 1
@@ -17,7 +17,7 @@ def canUnlockAll(boxes):
 
     while abierto == 1:
 
-        for x in range(0,len(boxes)):
+        for x in range(0, len(boxes)):
 
             abierto = 0
             for y in abiertas:
@@ -37,7 +37,6 @@ def canUnlockAll(boxes):
 
     if len(abiertas) == len(boxes):
         return True
-    else: 
+    else:
         return False
-    
     
