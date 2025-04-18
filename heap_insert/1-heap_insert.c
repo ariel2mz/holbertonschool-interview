@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <math.h>
 
-/** 
+/**
  * binary_tree_size - aaadsdsadasdas
  * @tree: aa
  *
