@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <math.h>
 
-/*
- * binary_tree_size aa
+/** 
+ * binary_tree_size - aaadsdsadasdas
  * @tree: aa
  *
  * Return: aa
@@ -16,8 +16,8 @@ return (0);
 return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
 }
 
-/*
- * get_parent_by_index - aa
+/**
+ * get_parent_by_index - aasadsadasdsa
  * @root: aa
  * @index: aa
  * Return: aa
@@ -49,8 +49,8 @@ parent = parent->right;
 return (parent);
 }
 
-/*
- * swap_up - aa
+/**
+ * swap_up - sadsdsadsadsadsa
  * @node: aa
  */
 void swap_up(heap_t **node)
@@ -69,8 +69,8 @@ current = current->parent;
 *node = current;
 }
 
-/*
- * heap_insert - aa
+/**
+ * heap_insert - aasadadsadasdsadasdsa
  * @root: aa
  * @value: aa
  * Return: aa
