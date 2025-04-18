@@ -8,7 +8,6 @@
  * @tree: aa
  * Return: aa
  */
-
 size_t binary_tree_size(const binary_tree_t *tree)
 {
 if (!tree)
@@ -22,7 +21,6 @@ return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
  * @index: aa
  * Return: aa
  */
-
 binary_tree_t *get_parent_by_index(binary_tree_t *root, size_t index)
 {
 if (index == 1)
@@ -54,7 +52,6 @@ return (parent);
  * swap_up - aa
  * @node: aa
  */
-
 void swap_up(heap_t **node)
 {
 heap_t *current = *node;
@@ -77,7 +74,6 @@ current = current->parent;
  * @value: aa
  * Return: aa
  */
- 
 heap_t *heap_insert(heap_t **root, int value)
 {
 if (!root)
