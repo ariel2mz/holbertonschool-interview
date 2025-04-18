@@ -5,6 +5,7 @@
  * binary_tree_node - sadsadsadsa
  * @parent: sadsadsa
  * @value: asdsadsadsa
+ *
  * Return: node
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
@@ -20,7 +21,3 @@ new_node->left = NULL;
 new_node->right = NULL;
 return (new_node);
 }
-
-/* si tiene hijo izquierda recursion a la izquierda
-si tiene hijo derecha recursion a la derecha
-comparar cual es mas largo si left o right*/
