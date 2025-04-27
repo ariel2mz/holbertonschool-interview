@@ -1,4 +1,15 @@
+#!/usr/bin/python3
+"""
+asdsadsadasdsa
+"""
+
+
 def minOperations(n):
+    """
+    sadasdsadsa
+    dsadsadsa
+    """
+
     if n < 2:
         return 0
 
