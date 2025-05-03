@@ -2,6 +2,28 @@
 #define SIZE 3
 #include "sandpiles.h"
 
+
+/**
+ * print_grido - Print 3x3 grid
+ * @grid: 3x3 grid
+ *
+ */
+ static void print_grido(int grid[3][3])
+ {
+     int i, j;
+ 
+     for (i = 0; i < 3; i++)
+     {
+         for (j = 0; j < 3; j++)
+         {
+             if (j)
+                 printf(" ");
+             printf("%d", grid[i][j]);
+         }
+         printf("\n");
+     }
+ }
+
 /**
  * is_unstable - Checks if a sandpile is unstable
  * @grid: 3x3 grid
@@ -79,7 +101,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 
     while (is_unstable(grid1))
     {
-        print_grid(grid1);
+        print_grido(grid1);
         topple(grid1);
     }
 }
