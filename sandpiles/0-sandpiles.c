@@ -11,7 +11,7 @@
 void print_grido(int grid[3][3])
  {
      int i, j;
- 
+    printf("=\n")
      for (i = 0; i < 3; i++)
      {
          for (j = 0; j < 3; j++)
