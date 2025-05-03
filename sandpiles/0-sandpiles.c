@@ -8,7 +8,7 @@
  * @grid: 3x3 grid
  *
  */
- static void print_grido(int grid[3][3])
+void print_grido(int grid[3][3])
  {
      int i, j;
  
