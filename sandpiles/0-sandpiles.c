@@ -6,7 +6,7 @@
  * print_grid - Prints a 3x3 grid
  * @grid: 3x3 grid
  */
-static void print_grid(int grid[3][3])
+void print_grid(int grid[3][3])
 {
     int i, j;
 
@@ -29,7 +29,7 @@ static void print_grid(int grid[3][3])
  *
  * Return: 1 if unstable, 0 if stable
  */
-static int is_unstable(int grid[3][3])
+int is_unstable(int grid[3][3])
 {
     int i, j;
 
@@ -48,7 +48,7 @@ static int is_unstable(int grid[3][3])
  * topple - Performs one toppling operation
  * @grid: 3x3 grid to update
  */
-static void topple(int grid[3][3])
+void topple(int grid[3][3])
 {
     int temp[3][3] = {{0}};
     int i, j;
