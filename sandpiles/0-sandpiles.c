@@ -2,26 +2,6 @@
 
 #define SIZE 3
 
-/**
- * print_grid - Prints a 3x3 grid
- * @grid: 3x3 grid
- */
-void print_grid(int grid[3][3])
-{
-    int i, j;
-
-    printf("=\n");
-    for (i = 0; i < SIZE; i++)
-    {
-        for (j = 0; j < SIZE; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid[i][j]);
-        }
-        printf("\n");
-    }
-}
 
 /**
  * is_unstable - Checks if a sandpile is unstable
