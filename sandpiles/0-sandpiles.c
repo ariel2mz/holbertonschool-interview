@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include "sandpiles.h"
 #define SIZE 3
-
+#include "sandpiles.h"
 
 /**
  * is_unstable - Checks if a sandpile is unstable
