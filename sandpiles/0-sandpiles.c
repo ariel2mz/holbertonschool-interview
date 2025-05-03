@@ -80,7 +80,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 
     while (is_unstable(grid1))
     {
-        print_grid(grid1);
         topple(grid1);
     }
 }
