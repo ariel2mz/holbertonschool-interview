@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 listint_t *uno = list;
 listint_t *dos = list;
 
-while (dos != NULL dos dos->next != NULL)
+while (dos != NULL && dos->next != NULL)
 {
 uno = uno->next;
 dos = dos->next->next;
