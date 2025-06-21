@@ -43,3 +43,4 @@ void menger(int level)
         }
         putchar('\n');
     }
+}
