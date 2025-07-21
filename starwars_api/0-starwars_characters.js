@@ -1,16 +1,15 @@
 #!/usr/bin/node
-const axios = require('axios');
 
+const request = require('request');
 const movieId = process.argv[2];
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
-axios.get(`https://swapi.dev/api/films/${movieId}/`)
-  .then(response => {
-    const characters = response.data.characters;
-    return Promise.all(characters.map(url => axios.get(url).then(res => res.data.name)));
-  })
-  .then(names => {
-    names.forEach(name => console.log(name));
-  })
-  .catch(err => {
-    console.error('Error:', err.message);
+request(apiUrl, (error, response, body) => {
+  const filmData = JSON.parse(body);
+  filmData.characters.forEach(characterUrl => {
+    request(characterUrl, (charError, charResponse, charBody) => {
+      const characterData = JSON.parse(charBody);
+      console.log(characterData.name);
+    });
   });
+});
