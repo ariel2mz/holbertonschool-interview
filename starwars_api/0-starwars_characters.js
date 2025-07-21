@@ -6,10 +6,17 @@ const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 request(apiUrl, (error, response, body) => {
   const filmData = JSON.parse(body);
-  filmData.characters.forEach(characterUrl => {
-    request(characterUrl, (charError, charResponse, charBody) => {
+  const characterUrls = filmData.characters;
+
+  function getCharacter(index) {
+    if (index >= characterUrls.length) return;
+    
+    request(characterUrls[index], (err, res, charBody) => {
       const characterData = JSON.parse(charBody);
       console.log(characterData.name);
+      getCharacter(index + 1);
     });
-  });
+  }
+  
+  getCharacter(0);
 });
