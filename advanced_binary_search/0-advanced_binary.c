@@ -44,9 +44,9 @@ int recursive_binary(int *array, size_t left, size_t right, int value)
 
     if (array[mid] == value)
     {
-        if (mid == left || array[mid - 1] != value)
-            return ((int)mid);
-        return (recursive_binary(array, left, mid, value));
+        if (mid > left && array[mid - 1] == value)
+            return (recursive_binary(array, left, mid, value));
+        return ((int)mid);
     }
     else if (array[mid] < value)
         return (recursive_binary(array, mid + 1, right, value));
