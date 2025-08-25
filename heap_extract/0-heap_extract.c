@@ -11,16 +11,16 @@
  */
 size_t tree_height(const heap_t *tree)
 {
-    size_t height_l = 0;
-    size_t height_r = 0;
+    size_t hl = 0;
+    size_t hr = 0;
 
     if (!tree)
         return (0);
 
-    height_l = tree->left ? 1 + tree_height(tree->left) : 0;
-    height_r = tree->right ? 1 + tree_height(tree->right) : 0;
+    hl = tree->left ? 1 + treeh(tree->left) : 0;
+    hr = tree->right ? 1 + treeh(tree->right) : 0;
 
-    return (height_l > height_r ? height_l : height_r);
+    return (hl > hr ? hl : hr);
 }
 
 /**
