@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include <stdlib.h>
 
 /**
  * heap_extract - dfghjkl
