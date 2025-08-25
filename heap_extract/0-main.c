@@ -18,8 +18,8 @@ void _binary_tree_delete(binary_tree_t *tree);
  */
 int main(void)
 {
-    heap_t *tree;
-    int array[] = {
+heap_t *tree;
+int array[] = {
         79, 47, 68, 87, 84, 91, 21, 32, 34, 2,
         20, 22, 98, 1, 62, 95
     };
