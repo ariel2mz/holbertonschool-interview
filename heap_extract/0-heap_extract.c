@@ -2,64 +2,122 @@
 #include <stdlib.h>
 
 /**
- * heap_extract - dfghjkl
- * @root: dfghjkl
+ * tree_height - adsdas
+ * @tree: asdasdsa
  *
- * Return: sdfghjkl
+ * Return: asdasdas
+ */
+size_t tree_height(const heap_t *tree)
+{
+    size_t height_l = 0;
+    size_t height_r = 0;
+
+    if (!tree)
+        return (0);
+
+    height_l = tree->left ? 1 + tree_height(tree->left) : 0;
+    height_r = tree->right ? 1 + tree_height(tree->right) : 0;
+
+    return (height_l > height_r ? height_l : height_r);
+}
+
+/**
+ * tree_size_h - sadasdsadsa
+ * @tree: asdasdasdass
+ *
+ * Return: asdasdas
+ */
+size_t tree_size_h(const binary_tree_t *tree)
+{
+    if (!tree)
+        return (0);
+
+    return (1 + tree_size_h(tree->left) + tree_size_h(tree->right));
+}
+
+/**
+ * _preorder - asdasdasdas
+ * @tree: sadadsadsa
+ * @node: sadasdasdas
+ * @height: asdasdas
+ */
+void _preorder(heap_t *tree, heap_t **node, size_t height)
+{
+    if (!tree)
+        return;
+
+    if (!height)
+        *node = tree;
+
+    _preorder(tree->left, node, height - 1);
+    _preorder(tree->right, node, height - 1);
+}
+
+/**
+ * heapify - asdasdas
+ * @root: asdasda
+ */
+void heapify(heap_t *root)
+{
+    heap_t *largest = NULL;
+    int temp;
+
+    if (!root)
+        return;
+
+    largest = root;
+
+    if (root->left && root->left->n > largest->n)
+        largest = root->left;
+
+    if (root->right && root->right->n > largest->n)
+        largest = root->right;
+
+    if (largest != root)
+    {
+        temp = root->n;
+        root->n = largest->n;
+        largest->n = temp;
+        heapify(largest);
+    }
+}
+
+/**
+ * heap_extract - kkkk
+ * @root: kkkk
+ *
+ * Return: kkk
  */
 int heap_extract(heap_t **root)
 {
-    int value, last_val;
-    heap_t *last_node, *current;
+    int value;
+    heap_t *last_node = NULL;
+    size_t height;
 
     if (!root || !*root)
         return (0);
 
-    current = *root;
-    value = current->n;
+    value = (*root)->n;
+    height = tree_height(*root);
 
-    if (!current->left && !current->right)
+    _preorder(*root, &last_node, height);
+
+    if (last_node == *root)
     {
-        free(current);
+        free(*root);
         *root = NULL;
         return (value);
     }
 
-    last_node = *root;
-    while (last_node->right)
-        last_node = last_node->right;
-    while (last_node->left)
-        last_node = last_node->left;
-    if (last_node->parent && last_node->parent->right == last_node)
-        last_node->parent->right = NULL;
-    else if (last_node->parent)
+    (*root)->n = last_node->n;
+
+    if (last_node->parent->left == last_node)
         last_node->parent->left = NULL;
+    else
+        last_node->parent->right = NULL;
 
-    last_val = last_node->n;
     free(last_node);
-    (*root)->n = last_val;
-
-    current = *root;
-    while (1)
-    {
-        heap_t *left = current->left;
-        heap_t *right = current->right;
-        heap_t *largest = current;
-
-        if (left && left->n > largest->n)
-            largest = left;
-        if (right && right->n > largest->n)
-            largest = right;
-
-        if (largest == current)
-            break;
-
-        int temp = current->n;
-        current->n = largest->n;
-        largest->n = temp;
-
-        current = largest;
-    }
+    heapify(*root);
 
     return (value);
 }
