@@ -26,7 +26,7 @@ antes = head;
 while (antes != dsps)
 {
 antes = antes->next;
-fast = fast->next;
+dsps = dsps->next;
 }
 return (antes);
 }
