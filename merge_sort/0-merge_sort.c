@@ -75,6 +75,6 @@ temp = malloc(sizeof(int) * size);
 if (!temp)
 return;
 
-merge_sort_recursive(array, temp, 0, size);
+aux(array, temp, 0, size);
 free(temp);
 }
