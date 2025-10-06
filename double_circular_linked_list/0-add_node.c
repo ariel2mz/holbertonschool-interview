@@ -21,7 +21,7 @@ if (!nuevo)
 return (NULL);
 
 nuevo->str = strdup(str);
-if (!new_node->str)
+if (!nuevo->str)
 {
 free(nuevo);
 return (NULL);
