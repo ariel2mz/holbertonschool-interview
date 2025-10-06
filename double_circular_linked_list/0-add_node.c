@@ -11,40 +11,40 @@
  */
 List *add_node_end(List **list, char *str)
 {
-    List *new_node, *last;
+List *nuevo, *last;
 
-    if (!list || !str)
-        return (NULL);
+if (!list || !str)
+return (NULL);
 
-    new_node = malloc(sizeof(List));
-    if (!new_node)
-        return (NULL);
+nuevo = malloc(sizeof(List));
+if (!nuevo)
+return (NULL);
 
-    new_node->str = strdup(str);
-    if (!new_node->str)
-    {
-        free(new_node);
-        return (NULL);
-    }
+nuevo->str = strdup(str);
+if (!new_node->str)
+{
+free(nuevo);
+return (NULL);
+}
 
-    if (!*list)
-    {
-        new_node->prev = new_node;
-        new_node->next = new_node;
-        *list = new_node;
-    }
-    else
-    {
-        last = (*list)->prev;
+if (!*list)
+{
+nuevo->prev = nuevo;
+nuevo->next = nuevo;
+*list = nuevo;
+}
+else
+{
+last = (*list)->prev;
 
-        new_node->next = *list;
-        new_node->prev = last;
+nuevo->next = *list;
+nuevo->prev = last;
 
-        last->next = new_node;
-        (*list)->prev = new_node;
-    }
+last->next = nuevo;
+(*list)->prev = nuevo;
+}
 
-    return (new_node);
+return (nuevo);
 }
 
 /**
@@ -56,40 +56,40 @@ List *add_node_end(List **list, char *str)
  */
 List *add_node_begin(List **list, char *str)
 {
-    List *new_node, *last;
+List *nuevo, *last;
 
-    if (!list || !str)
-        return (NULL);
+if (!list || !str)
+return (NULL);
 
-    new_node = malloc(sizeof(List));
-    if (!new_node)
-        return (NULL);
+nuevo = malloc(sizeof(List));
+if (!nuevo)
+return (NULL);
 
-    new_node->str = strdup(str);
-    if (!new_node->str)
-    {
-        free(new_node);
-        return (NULL);
-    }
+nuevo->str = strdup(str);
+if (!nuevo->str)
+{
+free(nuevo);
+return (NULL);
+}
 
-    if (!*list)
-    {
-        new_node->prev = new_node;
-        new_node->next = new_node;
-        *list = new_node;
-    }
-    else
-    {
-        last = (*list)->prev;
+if (!*list)
+{
+nuevo->prev = nuevo;
+nuevo->next = nuevo;
+*list = nuevo;
+}
+else
+{
+last = (*list)->prev;
 
-        new_node->next = *list;
-        new_node->prev = last;
+nuevo->next = *list;
+nuevo->prev = last;
 
-        last->next = new_node;
-        (*list)->prev = new_node;
+last->next = nuevo;
+(*list)->prev = nuevo;
 
-        *list = new_node;
-    }
+*list = nuevo;
+}
 
-    return (new_node);
+return (nuevo);
 }
