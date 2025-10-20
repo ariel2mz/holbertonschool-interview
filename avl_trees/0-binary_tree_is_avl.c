@@ -19,7 +19,7 @@ return (0);
 lefth = height(tree->left);
 righth = height(tree->right);
 
-return ((lefth > righth ? lefth : righth) + 1);
+return ((lefth > righth ? lefth : righth) +1);
 }
 
 /**
