@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""asdasdassdsa"""
+"""
+asdasdassd
+asdasdsadsa
+sa
+"""
 
 import sys
 
