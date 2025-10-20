@@ -13,7 +13,10 @@ totalsize = 0
 lines = 0
 
 def print_stats():
-    """asdsadsadas"""
+    """
+    asdsadsasad
+    das
+    """
     print(f"File size: {totalsize}")
     for code in sorted(stats.keys()):
         if stats[code] > 0:
